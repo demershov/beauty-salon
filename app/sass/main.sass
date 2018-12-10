@@ -132,6 +132,18 @@ section
 		&::after
 			opacity: .32
 
+	&.button-white
+		background-color: #ffffff
+		color: #444444
+		&::after
+			background-color: rgba(#000, .6)
+		&:hover
+			&::after
+				background-color: rgba(#000, .2)
+		&:active
+			&::after
+				background-color: rgba(#000, .4)
+
 .img-responsive
 	display: block
 	max-width: 100%
@@ -317,5 +329,100 @@ $colors: $blue, $red, $accent
 @for $i from 1 through length($colors)
 	.carousel-servises .owl-item:nth-child(#{length($colors)}n+#{$i})
 		background-color: nth($colors, $i)
+
+.carousel-servises
+	background-color: $dark
+	&-item
+		color: #ffffff
+		font-size: 18px
+		font-weight: 300
+		position: relative
+		display: flex
+		flex-direction: column-reverse
+		&:hover
+			.carousel-servises-image
+				opacity: 1
+		.carousel-logo
+			img
+				width: 100px
+				height: auto
+				margin: auto
+
+	.owl-item
+		&:nth-child(2n+2)
+			.carousel-servises-item
+				flex-direction: column
+
+	&-content
+		position: relative
+		padding: 60px 10%
+	
+	&-composition
+		margin: auto
+		text-align: center
+		width: 100%
+		.h3
+			font-weight: 800
+			font-size: 28px
+			margin-top: 5px
+			margin-bottom: 20px
+			span
+				font-weight: normal
+				font-size: 18px
+				font-weight: 300
+				display: block
+	&-list
+		margin: 0
+		padding: 0
+		margin-bottom: 5px
+		li
+			list-style-type: none
+			padding: 9px
+			border-bottom: 1px solid rgba(#000, .12)
+			&:last-child
+				border-bottom: none
+			strong
+				font-family: firasans sans-serif
+				color: #4a4a4a
+				.fa
+					font-size: 15px
+	.owl-nav
+		position: absolute
+		top: 0
+		width: 100%
+		display: block !important
+		> div
+			width: 64px
+			height: 64px
+			background-color: #ffffff
+			color: $dark
+			position: absolute
+			text-align: center
+			line-height: 64px
+			font-size: 26px
+			&.owl-prev
+				left: 0
+			&.owl-next
+				right: 0
+			
+
+	&-image
+		background-size: cover
+		background-position: center
+		opacity: .8
+		transition: opacity .7s ease
+
+.owl-carousel
+	.owl-item
+		backface-visibility: inherit
+
+.carousel-servises-image.nth-1
+	background-image: url('../img/service.png')
+	
+.carousel-servises-image.nth-2
+	background-image: url('../img/service2.png')
+
+.carousel-servises-image.nth-3
+	background-image: url('../img/service3.png')
 
 @import "media"
