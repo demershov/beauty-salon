@@ -62,13 +62,28 @@ $(function() {
 		ths.html(ths.html().replace(/^(\S+)/, '<span>$1</span>'));
 	});
 
+	$('select').selectize({
+		// create: true,
+		
+	});
+
+	$('form.callback').submit(function() {
+		var th = $(this);
+		$(th).find('.success').addClass('active').css('display', 'flex').hide().fadeIn();
+		setTimeout(function() {
+			$(th).find('.success').removeClass('active').fadeOut();
+			th.trigger('reset');
+		}, 3000)
+		return false;
+	})
+
 	// Ресайз окна
 	function onResize() {
 		$('.carousel-servises-content').equalHeights();
 	}onResize();
 
 	window.onresize = function() {
-		console.log(1)
+		// console.log(1)
 		onResize();
 	}
 });

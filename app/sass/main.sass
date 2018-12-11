@@ -27,13 +27,6 @@
 	color: #666
 	opacity: 1
 
-body input:focus:required:invalid,
-body textarea:focus:required:invalid
-	color: #666
-body input:required:valid,
-body textarea:required:valid
-	color: #666
-
 html, body
 	height: 100%
 
@@ -485,6 +478,130 @@ section
 			left: 20px;
 			&::before
 				content: "\f104"
+
+// ----------------------------------------------------------------------------	
+// Секция обратной связи
+// ----------------------------------------------------------------------------
+.s
+	&-call
+		background-image: url('../img/madama.jpg')
+		background-size: contain
+		background-repeat: no-repeat
+		background-position: 10%
+		&.inverse
+			background-color: #fff
+		&::before
+			content: ""
+			width: 50%
+			right: 0
+			height: 100%
+			position: absolute
+			background-color: rgba($accent, .9)
+
+input, textarea, select,
+.selectize-control .selectize-input,
+.selectize-control.single .selectize-input.input-active
+	background-color: transparent
+	border: 1px solid rgba(#000, .1)
+	border-width: 2px
+	border-radius: 2px
+	padding: 8px 20px
+	outline: none
+	display: inline-block
+	font-size: 16px
+	color: #333333
+
+.selectize-control .selectize-input
+	padding: 10px 22px
+	box-shadow: none
+	overflow: inherit
+	line-height: inherit
+	text-align: left
+	input
+		font-size: 16px
+	&.focus
+		box-shadow: none
+	&.dropdown-active::before
+		background-color: transparent
+
+.selectize-control.single
+	.selectize-input, &.dropdown-active
+		&::after
+			border: none
+			content: "\f107"
+			font-family: fontawesome
+			position: absolute
+			right: 30px
+			top: 12px
+		&.dropdown-active::after
+			content: "\f106"
+	.selectize-dropdown
+		font-size: 15px
+		border: none
+		border-radius: 0
+		text-align: left
+		&-content
+			.option
+				padding: 10px
+				&.active
+					background-color: lighten($accent, 10)
+
+select
+	padding: 10px 22px
+
+.success
+	display: none
+	position: absolute
+	top: 0
+	left: 0
+	right: 0
+	bottom: 0
+	text-transform: uppercase
+	font-weight: bold
+	// display: flex
+	z-index: 10
+	span
+		margin: auto
+	& ~ *
+		transition: all .5s ease
+	&.active
+		& ~ *
+			opacity: .5
+			filter: blur(10px)
+
+.callback
+	padding: 25% 0
+	position: relative
+	&-logo
+		img
+			width: 100px
+			height: auto
+	.form-head
+		margin: 0
+		font-size: 30px
+		color: #ffffff
+		text-transform: uppercase
+	p
+		margin-top: 0
+	input, textarea, select,
+	.selectize-control .selectize-input,
+	.selectize-control.single .selectize-input.input-active
+		color: #ffffff
+		width: 100%
+		margin-top: 16px
+		&::-webkit-input-placeholder
+			color: #ffffff
+		&::-moz-placeholder
+			color: #ffffff
+		&::-ms-input-placeholder
+			color: #ffffff
+		&::-moz-placeholder
+			color: #ffffff
+		option
+			color: #333333
+	.button
+		margin-top: 40px
+		
 
 
 @import "media"
