@@ -67,6 +67,14 @@ $(function() {
 		
 	});
 
+	$('.reviews').owlCarousel({
+		loop: true,
+		items: 1,
+		smartSpeed: 700,
+		nav: false,
+		autoHeight: true
+	})
+
 	$('form.callback').submit(function() {
 		var th = $(this);
 		$(th).find('.success').addClass('active').css('display', 'flex').hide().fadeIn();
