@@ -614,7 +614,6 @@ select
 
 .reviews
 	text-align: center
-
 	.owl-dots
 		width: 100%
 		text-align: center
@@ -652,8 +651,6 @@ select
 	&-text
 		color: #95989a
 
-
-
 .quotes
 	position: absolute
 	width: 100%
@@ -674,5 +671,49 @@ select
 	&::after
 		right: -60px
 		transform: rotate(0deg)
+
+// Партнеры
+.s-partners
+	background-image: url('../img/bg-3.jpg')
+	.partners
+		.partner
+			height: 100%
+			display: flex
+			margin: auto
+		.owl-stage
+			display: flex
+		.owl-item
+			margin-top: 30px
+			img
+				max-width: 100%
+				width: auto
+				display: inline-block
+				margin: auto
+		.owl-nav
+			position: absolute
+			top: 0
+			width: 100%
+			z-index: 2
+			> div
+				position: absolute
+				top: 50px
+				color: #999999
+				font-size: 30px
+				transition: opacite .5s ease
+				padding: 0px 10px
+				&:hover
+					opacity: 0.6s
+				&.owl-prev
+					left: -60px
+				&.owl-next
+					right: -60px
+			
+	&.section-overlay::before
+		background-color: #ffffff
+	.h2
+		margin-top: 10px
+		span
+			color: $accent
+		
 
 @import "media"
