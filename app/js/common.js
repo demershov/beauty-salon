@@ -99,6 +99,19 @@ $(function() {
 		},
 	})
 
+	$(window).scroll(function() {
+		if ($(this).scrollTop() > $(this).height()) {
+			$('.on-top').addClass('active');
+		}
+		else {
+			$('.on-top').removeClass('active')
+		}
+	});
+
+	$('.on-top').click(function() {
+		$('html, body').stop().animate({scrollTop: 0}, 'slow', 'swing');
+	});
+
 	$('form.callback').submit(function() {
 		var th = $(this);
 		$(th).find('.success').addClass('active').css('display', 'flex').hide().fadeIn();
@@ -118,4 +131,8 @@ $(function() {
 		// console.log(1)
 		onResize();
 	}
+});
+
+$(window).on('load', function() {
+	$('.preloader').delay(1000).fadeOut('slow');
 });
